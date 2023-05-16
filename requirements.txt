@@ -1,6 +1,2 @@
-redis
-celery
 django
-scrapy
 ipdb
-beautifulsoup4
