@@ -1,0 +1,14 @@
+{% if most_popular_urls %}
+    <ul>
+    {% for url in most_popular_urls %}
+        <li><a href="{% url 'urls:url' url.id %}">{{ url.short_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="{% url 'urls:index' %}" method="post">
+    {% csrf_token %}
+    <label for="url">Enter a url to shorten</label>
+    <input type="text" id="url" name="url">
+    <input type="submit" value="Submit url">
+</form>
